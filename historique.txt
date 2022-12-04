@@ -1,8 +1,0 @@
-user1 :  grp "aaaaaaaa" group1
-user2 :  grp "bbbbbbbbbb" group1
-user2 :  msg "ccccccccccc" user
-user1 : grp "ttttt" group1
-user1 : grp "rrrrrr" group1
-user2 : grp "eeeeeee" group1
-user2 : msg "yyyyyyy" user1
-

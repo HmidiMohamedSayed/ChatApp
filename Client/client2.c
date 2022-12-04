@@ -158,7 +158,13 @@ static void app(const char *address, const char *name)
 
                   } printf("****************\n");printf("press enter to return to menu\n");break;
                case 4 : printf("write your message \n");
-                  scanf("%s",msg1);
+                        char temp;
+                        scanf("%c",&temp);
+                        scanf("%[^\n]",msg1);
+                        
+                        printf("******%s\n",msg1);
+            
+       
                   write_server(sock,msg1);
                   strncpy(messages[nb],name, BUF_SIZE - 1);
                         strncat(messages[nb], " : ", sizeof messages[nb] - strlen(messages[nb]) - 1);
@@ -168,9 +174,13 @@ static void app(const char *address, const char *name)
                   printf("your message was sent successfully\n");break;
       
                case 5 : printf("enter a user name\n");
+                        fflush(stdin);
                         scanf("%s",name1);
                         printf("write your message \n");
-                        scanf("%s",msg1);
+                        fflush(stdin);
+                        char temp1;
+                        scanf("%c",&temp1);
+                        scanf("%[^\n]",msg1);
                         strncpy(msg,"msg", BUF_SIZE - 1);
                         strncat(msg, " \"", sizeof msg - strlen(msg) - 1);
                         strncat(msg, msg1, sizeof msg - strlen(msg) - 1);
@@ -187,9 +197,13 @@ static void app(const char *address, const char *name)
                         nb++;
                         printf("your message was sent successfully\n");break;
                case 6 : printf("enter a group name \n");
+                        fflush(stdin);
                         scanf("%s",name1);
                         printf("write your message \n");
-                        scanf("%s",msg1);
+                        fflush(stdin);
+                        char temp2;
+                        scanf("%c",&temp2);
+                        scanf("%[^\n]",msg1);
                         strncpy(msg,"grp", BUF_SIZE - 1);
                         strncat(msg, " \"", sizeof msg - strlen(msg) - 1);
                         strncat(msg, msg1, sizeof msg - strlen(msg) - 1);
@@ -280,6 +294,8 @@ void display_menu(){
    printf("4.send message to global chat\n");
    printf("5.send private message to a specified user\n");
    printf("6.send a group message\n");
+   //TODO
+   /*
    printf("7.list connected users\n");
    printf("8.list groups\n");
    printf("9.list my groups' users\n");
@@ -288,6 +304,7 @@ void display_menu(){
    printf("12.create a group\n");
    printf("13.add a user to a group\n");
    printf("14.remove a user from a group\n");
+   */
    printf("---------------------------------------------- \n");
 
 }

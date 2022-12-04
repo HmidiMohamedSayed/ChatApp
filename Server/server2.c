@@ -49,11 +49,10 @@ static void app(void)
             sscanf(line,"%s",name);
             memcpy( msg1, &line[strlen(name)+2], strlen(line)-strlen(name)-3 );
             msg1[strlen(line)-strlen(name)-3] = '\0';
-            printf("********************%s***************** %s\n",name,msg1);
+            //printf("********************%s***************** %s\n",name,msg1);
             strcpy(historique[n].name,name);
             strcpy(historique[n].message,msg1);
             n++;
-            printf("$$$$\n");
 
 
     }
@@ -244,7 +243,7 @@ static void app(void)
                      n++;
                      file = fopen("historique.txt","w");
                      for(int i=0;i<n;i++){
-                     printf("%s : %s\n",historique[i].name,historique[i].message);
+                     //printf("%s : %s\n",historique[i].name,historique[i].message);
                      fprintf(file,"%s : %s\n",historique[i].name,historique[i].message);
                      }
                   fclose(file);
@@ -260,7 +259,7 @@ static void app(void)
                      //todo: handle group not existing
                      int grp_index = -1;  
                      for (int i=0;i<nb_groups;i++){
-                        printf("%s   %s \n",groups[i].name,receiver);
+                        //printf("%s   %s \n",groups[i].name,receiver);
                         if(!strcmp(groups[i].name,receiver)){
                            grp_index=i;
                            break;
@@ -284,7 +283,7 @@ static void app(void)
                   n++;
                   file = fopen("historique.txt","w");
                   for(int i=0;i<n;i++){
-                     printf("%s : %s\n",historique[i].name,historique[i].message);
+                     //printf("%s : %s\n",historique[i].name,historique[i].message);
                      fprintf(file,"%s : %s\n",historique[i].name,historique[i].message);
                   }
                   fclose(file);
@@ -305,7 +304,7 @@ static void app(void)
                   n++;
                   file = fopen("historique.txt","w");
                   for(int i=0;i<n;i++){
-                     printf("%s : %s\n",historique[i].name,historique[i].message);
+                     //printf("%s : %s\n",historique[i].name,historique[i].message);
                      fprintf(file,"%s : %s\n",historique[i].name,historique[i].message);
                   }
                   fclose(file);
@@ -391,7 +390,7 @@ static void send_message_to_one_group(Client *members, Client sender, int nb_mem
    message[0] = 0;
    for(i = 0; i < nb_members; i++)
    {
-         printf("nb members:%d\n/ name: %s\n",nb_members,members[i].name);
+         //printf("nb members:%d\n/ name: %s\n",nb_members,members[i].name);
          if(from_server == 0)
          {
             strncpy(message, sender.name, BUF_SIZE - 1);

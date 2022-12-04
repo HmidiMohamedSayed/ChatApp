@@ -28,12 +28,12 @@ typedef struct in_addr IN_ADDR;
 #endif
 
 #define CRLF        "\r\n"
-#define PORT         6001
+#define PORT         6000
 #define MAX_CLIENTS     100
 
 #define BUF_SIZE    1024
 
-#include "client2-01.h"
+#include "client2.h"
 
 static void init(void);
 static void end(void);
